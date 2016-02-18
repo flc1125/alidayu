@@ -1,10 +1,10 @@
 <?php
 /**
- * PHP命令行操作阿里云DNS
+ * 阿里大鱼API接口（短信接口）范例
  *
- * @author Flc <2016-02-01 23:08:05>
+ * @author Flc <2016-02-18 23:18:10>
  * @link http://flc.ren 
- * @link https://code.csdn.net/flc1125/alidns 
+ * @link https://code.csdn.net/flc1125/alidayu
  */
 header ("Content-Type:text/html; charset=UTF-8");
 
