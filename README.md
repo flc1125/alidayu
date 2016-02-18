@@ -1,14 +1,14 @@
-# 阿里大鱼API接口（短信接口）范例
+## 阿里大鱼API接口（短信接口）范例
 
 > 提供方官网：http://www.alidayu.com/
 >
 > PHP版本：PHP>=5.4
 
-## 配置说明
+### 配置说明
 
 文件`/Inc/config.inc.php`定义`AlidayuAppKey`和`AlidayuAppSecret`即可。获取，请参考官网！
 
-## 使用说明
+### 使用说明
 
 ```php
 <?php
@@ -36,7 +36,7 @@ print_r($client->execute($req));
 ?>
 ```
 
-## 其他说明
+### 其他说明
 
 - 目前仅开发短信相关功能，如需拓展，请在`/Alidayu/Request/`目录下新增类，以开发更多功能接口！
 
