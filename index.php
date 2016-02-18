@@ -33,5 +33,4 @@ $req = $request->setSmsTemplateCode('SMS_5053601')
     ->setSmsType('normal')
     ->setExtend('demo');
 
-
 print_r($client->execute($req));
