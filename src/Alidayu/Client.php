@@ -31,6 +31,12 @@ class Client
     protected $sign_method = 'md5';
 
     /**
+     * 响应格式。可选值：xml，json。
+     * @var string
+     */
+    protected $format = 'json';
+
+    /**
      * 初始化
      * @param array $config 阿里大于配置App类
      */
@@ -44,9 +50,63 @@ class Client
         }
     }
 
+    /**
+     * 发起请求数据
+     * @param  \Flc\Alidayu\Requests\IRequest $request 请求类
+     * @return false|object
+     */
     public function execute(IRequest $request)
     {
-        return $this->generateSign($request->getParams());
+        $method        = $request->getMethod();
+        $publicParams  = $this->getPublicParams();
+        $serviceParams = $request->getParams();
+
+        $params = array_merge(
+            $publicParams,
+            [
+                'method' => $method
+            ],
+            $serviceParams
+        );
+
+        // 签名
+        $params['sign'] = $this->generateSign($params);
+
+        // 请求数据
+        $resp = $this->curl($this->api_uri, $params);
+
+        // 解析返回
+        return $this->parseResp($resp);
+    }
+
+    /**
+     * 解析返回数据
+     * @return array|false
+     */
+    protected function parseResp($response)
+    {
+        if ($this->format == 'json') {
+            return json_decode($response);
+        } elseif ($this->format == 'xml') {
+            return simplexml_load_string($response);
+        } else {
+            throw new Exception("format错误...");
+        }
+    }
+
+    /**
+     * 返回公共参数
+     * @return array 
+     */
+    protected function getPublicParams()
+    {
+        return [
+            'app_key'     => $this->app->app_key,
+            'timestamp'   => date('Y-m-d H:i:s'),
+            'format'      => $this->format,
+            'v'           => '2.0',
+            'sign_method' => $this->sign_method
+        ];
     }
 
     /**
@@ -58,13 +118,9 @@ class Client
     {
         if ($this->sign_method == 'md5') {
             return $this->generateMd5Sign($params);
-        }
-
-        elseif ($this->sign_method == 'hmac') {
+        } elseif ($this->sign_method == 'hmac') {
             return $this->generateHmacSign($params);
-        }
-
-        else {
+        } else {
             throw new Exception("sign_method错误...");
         }
     }
