@@ -1,11 +1,2 @@
 {
-    "autoload": {
-        "classmap": [
-            "Library",
-            "Alidayu"
-        ],
-        "files": [
-            "Inc/common.inc.php"
-        ]
-    }
 }
