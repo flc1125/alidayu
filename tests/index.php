@@ -1,6 +1,7 @@
 <?php
 use Flc\Alidayu\Client;
 use Flc\Alidayu\App;
+use Flc\Alidayu\Requests\AlibabaAliqinFcSmsNumSend;
 
 require __DIR__ . '/../vendor/autoload.php';
 
@@ -10,6 +11,7 @@ $config = [
     'app_secret' => '89bb459e858382d1aac4ae2ccc9885cb',
 ];
 
-$app    = new App($config);
-$client = new Client($app);
-$request = new 
+$client  = new Client(new App($config));
+$request = new AlibabaAliqinFcSmsNumSend;
+
+print_R($client->execute($request));
