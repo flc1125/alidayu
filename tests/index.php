@@ -14,4 +14,4 @@ $config = [
 $client  = new Client(new App($config));
 $request = new AlibabaAliqinFcSmsNumSend;
 
-print_R($client->execute($request));
+print_r($client->execute($request));

@@ -34,7 +34,7 @@ class Client
      * 响应格式。可选值：xml，json。
      * @var string
      */
-    protected $format = 'json';
+    protected $format = 'xml';
 
     /**
      * 初始化
@@ -76,22 +76,32 @@ class Client
         $resp = $this->curl($this->api_uri, $params);
 
         // 解析返回
-        return $this->parseResp($resp);
+        return $this->parseRep($resp);
     }
 
     /**
      * 解析返回数据
      * @return array|false
      */
-    protected function parseResp($response)
+    protected function parseRep($response)
     {
         if ($this->format == 'json') {
-            return json_decode($response);
-        } elseif ($this->format == 'xml') {
-            return simplexml_load_string($response);
-        } else {
+            $resp = json_decode($response);
+
+            if (false !== $resp) {
+                $resp = current($resp);
+            }
+        }
+
+        elseif ($this->format == 'xml') {
+            $resp = @simplexml_load_string($response);
+        }
+
+        else {
             throw new Exception("format错误...");
         }
+
+        return $resp;
     }
 
     /**
@@ -171,5 +181,37 @@ class Client
     protected static function sortParams(&$params = [])
     {
         ksort($params);
+    }
+
+    /**
+     * curl请求
+     * @param  string $url        string
+     * @param  array|null $postFields 请求参数
+     * @return [type]             [description]
+     */
+    protected function curl($url, $postFields = null)
+    {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_FAILONERROR, false);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        //https 请求
+        if(strlen($url) > 5 && strtolower(substr($url,0,5)) == "https" ) {
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+        }
+        if (is_array($postFields) && 0 < count($postFields)) {
+            $postBodyString = "";
+            foreach ($postFields as $k => $v) {
+                $postBodyString .= "$k=" . urlencode($v) . "&"; 
+            }
+            unset($k, $v);
+            curl_setopt($ch, CURLOPT_POST, true);
+            $header = array("content-type: application/x-www-form-urlencoded; charset=UTF-8");
+            curl_setopt($ch,CURLOPT_HTTPHEADER,$header);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, substr($postBodyString,0,-1));
+        }
+        $reponse = curl_exec($ch);
+        return $reponse;
     }
 }
