@@ -34,7 +34,7 @@ class Client
      * 响应格式。可选值：xml，json。
      * @var string
      */
-    protected $format = 'xml';
+    protected $format = 'json';
 
     /**
      * 初始化
