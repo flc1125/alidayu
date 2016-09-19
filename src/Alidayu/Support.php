@@ -16,7 +16,7 @@ class Support
      */
     public static function jsonStr($params = [])
     {
-        $arr = '';
+        $arr = [];
 
         array_walk($params, function($value, $key) use (&$arr) {
             $arr[] = "\"{$key}\":\"{$value}\"";

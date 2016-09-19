@@ -54,7 +54,7 @@ print_r($client->execute($req));
 
 - 官方网址： https://www.alidayu.com/
 - 官方API文档： https://api.alidayu.com/doc2/apiList.htm
-- composer： http://docs.phpcomposer.com/
+- composer： https://getcomposer.org/
 
 ## License
 
