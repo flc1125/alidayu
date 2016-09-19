@@ -3,6 +3,7 @@ use Flc\Alidayu\Client;
 use Flc\Alidayu\App;
 use Flc\Alidayu\Requests\AlibabaAliqinFcSmsNumSend;
 use Flc\Alidayu\Requests\AlibabaAliqinFcTtsNumSinglecall;
+use Flc\Alidayu\Requests\AlibabaAliqinFcVoiceNumSinglecall;
 
 require __DIR__ . '/../vendor/autoload.php';
 
@@ -33,6 +34,12 @@ $req->setCalledNum('18825277676')
     ])
     ->setCalledShowNum('051482043270')
     ->setTtsCode('TTS_15230020');
+
+// 语音通知 passed
+$req = new AlibabaAliqinFcVoiceNumSinglecall;
+$req->setCalledNum('18825277676')
+    ->setCalledShowNum('051482043270')
+    ->setVoiceCode('08559b5f-0573-4e30-89ca-b82a9f4b94f8.wav');
 
 
 
