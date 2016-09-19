@@ -1,6 +1,8 @@
 <?php
 namespace Flc\Alidayu\Requests;
 
+use Flc\Alidayu\Support;
+
 /**
  * 阿里大于 - 短信发送
  *
@@ -38,7 +40,7 @@ class AlibabaAliqinFcSmsNumSend extends Request implements IRequest
     public function setRecNum($value)
     {
         if (is_array($value))
-            $value = explode(',', $value);
+            $value = implode(',', $value);
 
         $this->params['rec_num'] = $value;
 
@@ -51,8 +53,9 @@ class AlibabaAliqinFcSmsNumSend extends Request implements IRequest
      */
     public function setSmsParam($value)
     {
-        if (is_array($value))
-            $value = json_encode($value);
+        if (is_array($value)) {
+            $value = Support::jsonStr($value);
+        }
 
         $this->params['sms_param'] = $value;
 
