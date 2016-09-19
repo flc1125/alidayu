@@ -1,10 +1,12 @@
-# `AlibabaAliqinFcTtsNumSinglecall` 文本转语音通知
+# 文本转语音通知
 
-## 官方文档
+`\Flc\Alidayu\Requests\AlibabaAliqinFcTtsNumSinglecall`
+
+## 1. 官方文档
 
 https://api.alidayu.com/docs/api.htm?spm=a3142.7629065.4.5.DH7XBj&apiId=25444
 
-## 参数、方法
+## 2. 参数、方法
 
 |参数|方法|类型|是否必须|默认值|说明|
 |----|----|----|----|----|----|
@@ -14,7 +16,7 @@ https://api.alidayu.com/docs/api.htm?spm=a3142.7629065.4.5.DH7XBj&apiId=25444
 |tts_code|setTtsCode($value)|string|**必须**| |设置TTS模板ID|
 |extend|setExtend($value)|string|可选| |设置公共回传参数|
 
-## 使用
+## 3. 使用
 
 ```php
 <?php
