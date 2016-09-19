@@ -52,8 +52,8 @@ class AlibabaAliqinFcVoiceNumSinglecall extends Request implements IRequest
     }
 
     /**
-     * 设置TTS模板ID
-     * @param  string $value TTS模板ID
+     * 设置语音文件ID
+     * @param  string $value 语音文件ID
      */
     public function setVoiceCode($value)
     {

@@ -4,6 +4,7 @@ use Flc\Alidayu\App;
 use Flc\Alidayu\Requests\AlibabaAliqinFcSmsNumSend;
 use Flc\Alidayu\Requests\AlibabaAliqinFcTtsNumSinglecall;
 use Flc\Alidayu\Requests\AlibabaAliqinFcVoiceNumSinglecall;
+use Flc\Alidayu\Requests\AlibabaAliqinFcSmsNumQuery;
 
 require __DIR__ . '/../vendor/autoload.php';
 
@@ -40,6 +41,14 @@ $req = new AlibabaAliqinFcVoiceNumSinglecall;
 $req->setCalledNum('18825277676')
     ->setCalledShowNum('051482043270')
     ->setVoiceCode('08559b5f-0573-4e30-89ca-b82a9f4b94f8.wav');
+
+// 短信发送记录查询
+$req = new AlibabaAliqinFcSmsNumQuery;
+$req->setBizId('')
+    ->setRecNum('18825277676')
+    ->setQueryDate('20160919')
+    ->setCurrentPage(1)
+    ->setPageSize(10);
 
 
 
