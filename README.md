@@ -15,6 +15,7 @@
 - `待测` [流量直充查询](docs/alibaba_aliqin_fc_flow_query.md)
 - `待测` [流量直充分省接口](docs/alibaba_aliqin_fc_flow_charge_province.md)
 - `通过` [流量直充档位表](docs/alibaba_aliqin_fc_flow_grade.md)
+- [辅助方法](docs/support.md)
 
 > **`待测`**：因个人开发者，阿里大于权限相对较低。暂时无法测试；功能已开发，如测试可用，请告知~~
 
