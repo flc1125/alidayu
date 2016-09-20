@@ -80,6 +80,28 @@ class Client
     }
 
     /**
+     * 设置签名方式
+     * @param string $value 签名方式，支持md5, hmac
+     */
+    public function setSignMethod($value = 'md5')
+    {
+        $this->sign_method = $value;
+
+        return $this;
+    }
+
+    /**
+     * 设置回传格式
+     * @param string $value 响应格式，支持json/xml
+     */
+    public function setFormat($value = 'json')
+    {
+        $this->format = $value;
+
+        return $this;
+    }
+
+    /**
      * 解析返回数据
      * @return array|false
      */
