@@ -1,11 +1,14 @@
 {
+    "name": "Flc/Alidayu",
+    "description": "叶子坑 - 阿里大于API",
+    "keywords": ["alidayu", "flc"],
+    "license": "MIT",
+    "require": {
+        "php": ">=5.4.0"
+    },
     "autoload": {
-        "classmap": [
-            "Library",
-            "Alidayu"
-        ],
-        "files": [
-            "Inc/common.inc.php"
-        ]
+        "psr-4": {
+            "Flc\\Alidayu\\": "src/Alidayu/"
+        }
     }
 }

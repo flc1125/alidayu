@@ -1,43 +1,76 @@
-## 阿里大鱼API接口（短信接口）范例
+# 阿里大于(鱼) - v2.0
 
-> 提供方官网：http://www.alidayu.com/
->
-> PHP版本：PHP>=5.4
+之前的旧版本（`v1.0`）开源出去后，使用者较多；但兼容各大框架较差；为此发布`v2.0`；该版本全新架构，适用任意框架！
 
-### 配置说明
+> `v2.0`不支持从`v1.0`直接升级，请抛弃`v1.0`
 
-文件`/Inc/config.inc.php`定义`AlidayuAppKey`和`AlidayuAppSecret`即可。获取，请参考官网！
+## 功能
 
-### 使用说明
+- `通过` [短信发送](docs/alibaba_aliqin_fc_sms_num_send.md)
+- `通过` [短信发送记录查询](docs/alibaba_aliqin_fc_sms_num_query.md)
+- `通过` [文本转语音通知](docs/alibaba_aliqin_fc_tts_num_singlecall.md)
+- `通过` [语音通知](docs/alibaba_aliqin_fc_voice_num_singlecall.md)
+- `待测` [多方通话](docs/alibaba_aliqin_fc_voice_num_doublecall.md)
+- `待测` [流量直充](docs/alibaba_aliqin_fc_flow_charge.md)
+- `待测` [流量直充查询](docs/alibaba_aliqin_fc_flow_query.md)
+- `待测` [流量直充分省接口](docs/alibaba_aliqin_fc_flow_charge_province.md)
+- `通过` [流量直充档位表](docs/alibaba_aliqin_fc_flow_grade.md)
+- [辅助方法](docs/support.md)
+
+> **`待测`**：因个人开发者，阿里大于权限相对较低。暂时无法测试；功能已开发，如测试可用，请告知~~
+
+## 环境
+
+- PHP >= 5.4
+- [composer](https://getcomposer.org/)
+
+## 安装
+
+```shell
+composer require Flc/Alidayu
+```
+
+## 使用
 
 ```php
 <?php
-use Alidayu\AlidayuClient as Client;
-use Alidayu\Request\SmsNumSend;
+use Flc\Alidayu\Client;
+use Flc\Alidayu\App;
+use Flc\Alidayu\Requests\AlibabaAliqinFcSmsNumSend;
 
-$client  = new Client;
-$request = new SmsNumSend;
-
-// 短信内容参数
-$smsParams = [
-    'code'    => randString(),
-    'product' => '测试的'
+// 配置信息
+$config = [
+    'app_key'    => '*****',
+    'app_secret' => '************',
 ];
 
-// 设置请求参数
-$req = $request->setSmsTemplateCode('SMS_5053601')
-    ->setRecNum('13312341234')
-    ->setSmsParam(json_encode($smsParams))
-    ->setSmsFreeSignName('活动验证')
-    ->setSmsType('normal')
-    ->setExtend('demo');
+$client = new Client(new App($config));
+$req    = new AlibabaAliqinFcSmsNumSend;
 
-print_r($client->execute($req));
+$req->setRecNum('13312311231')
+    ->setSmsParam([
+        'number' => rand(100000, 999999)
+    ])
+    ->setSmsFreeSignName('叶子坑')
+    ->setSmsTemplateCode('SMS_15105357');
+
+$resp = $client->execute($req)
+
+print_r($resp);
+print_r($resp->result->model);
 ?>
 ```
 
-### 其他说明
+## 帮助
 
-- 目前仅开发短信相关功能，如需拓展，请在`/Alidayu/Request/`目录下新增类，以开发更多功能接口！
+- 意见、BUG反馈： https://github.com/flc1125/alidayu/issues
 
-- 开发文档参考网址：http://open.taobao.com/doc2/apiDetail.htm?spm=0.0.0.0.pjxLXY&apiId=25450
+## 支持
+
+- 官方网址： https://www.alidayu.com/
+- 官方API文档： https://api.alidayu.com/doc2/apiList.htm
+- composer： https://getcomposer.org/
+
+## License
+
+MIT
