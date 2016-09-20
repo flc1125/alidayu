@@ -6,7 +6,7 @@ namespace Flc\Alidayu\Requests;
  *
  * @author Flc <2016-09-19 21:39:58>
  * @link   http://flc.ren
- * @link   https://api.alidayu.com/docs/api.htm?apiId=25445
+ * @link   http://open.taobao.com/docs/api.htm?apiId=25445
  */
 class AlibabaAliqinFcVoiceNumSinglecall extends Request implements IRequest
 {

@@ -6,7 +6,7 @@ namespace Flc\Alidayu\Requests;
  *
  * @author Flc <2016-09-20 20:12:18>
  * @link   http://flc.ren
- * @link   https://api.alidayu.com/docs/api.htm?apiId=25444
+ * @link   http://open.taobao.com/docs/api.htm?apiId=26312
  */
 class AlibabaAliqinFcFlowGrade extends Request implements IRequest
 {

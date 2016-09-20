@@ -8,7 +8,7 @@ use Flc\Alidayu\Support;
  *
  * @author Flc <2016-09-19 21:38:11>
  * @link   http://flc.ren
- * @link   https://api.alidayu.com/docs/api.htm?apiId=25444
+ * @link   http://open.taobao.com/docs/api.htm?apiId=25444
  */
 class AlibabaAliqinFcTtsNumSinglecall extends Request implements IRequest
 {

@@ -8,7 +8,7 @@ use Flc\Alidayu\Support;
  *
  * @author Flc <2016-09-18 19:43:18>
  * @link   http://flc.ren
- * @link   http://open.taobao.com/doc2/apiDetail.htm?apiId=25450&scopeId=11872
+ * @link   http://open.taobao.com/docs/api.htm?apiId=25450
  */
 class AlibabaAliqinFcSmsNumSend extends Request implements IRequest
 {
