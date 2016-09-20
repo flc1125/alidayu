@@ -61,4 +61,15 @@ class AlibabaAliqinFcVoiceNumSinglecall extends Request implements IRequest
 
         return $this;
     }
+
+    /**
+     * 设置公共回传参数
+     * @param string $value 公共回传参数
+     */
+    public function setExtend($value = '')
+    {
+        $this->params['extend'] = $value;
+
+        return $this;
+    }
 }
