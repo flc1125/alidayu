@@ -1,6 +1,7 @@
 ## 功能列表
 
 - `通过` [短信发送](docs/alibaba_aliqin_fc_sms_num_send.md)
+- `通过` [短信发送记录查询](alibaba_aliqin_fc_sms_num_query.md)
 - `通过` [文本转语音通知](docs/alibaba_aliqin_fc_tts_num_singlecall.md)
 - `通过` [语音通知](docs/alibaba_aliqin_fc_voice_num_singlecall.md)
 - `待测` ~~多方通话~~

@@ -16,37 +16,37 @@ $config = [
 
 $client = new Client(new App($config));
 
-// 短信发送
-$req    = new AlibabaAliqinFcSmsNumSend;
-$req->setRecNum('18825277676')
-    ->setSmsParam([
-        'number' => rand(100000, 999999)
-    ])
-    ->setSmsFreeSignName('叶子坑')
-    ->setSmsTemplateCode('SMS_15105357');
+// 短信发送 passed
+// $req    = new AlibabaAliqinFcSmsNumSend;
+// $req->setRecNum('18825277676')
+//     ->setSmsParam([
+//         'number' => rand(100000, 999999)
+//     ])
+//     ->setSmsFreeSignName('叶子坑')
+//     ->setSmsTemplateCode('SMS_15105357');
 
 // 文本转语音通知 passed
-$req = new AlibabaAliqinFcTtsNumSinglecall;
-$req->setCalledNum('18825277676')
-    ->setTtsParam([
-        'username' => 'admin',
-        'time'     => date('Y-m-d'),
-        'client'   => '微网站'
-    ])
-    ->setCalledShowNum('051482043270')
-    ->setTtsCode('TTS_15230020');
+// $req = new AlibabaAliqinFcTtsNumSinglecall;
+// $req->setCalledNum('18825277676')
+//     ->setTtsParam([
+//         'username' => 'admin',
+//         'time'     => date('Y-m-d'),
+//         'client'   => '微网站'
+//     ])
+//     ->setCalledShowNum('051482043270')
+//     ->setTtsCode('TTS_15230020');
 
 // 语音通知 passed
-$req = new AlibabaAliqinFcVoiceNumSinglecall;
-$req->setCalledNum('18825277676')
-    ->setCalledShowNum('051482043270')
-    ->setVoiceCode('08559b5f-0573-4e30-89ca-b82a9f4b94f8.wav');
+// $req = new AlibabaAliqinFcVoiceNumSinglecall;
+// $req->setCalledNum('18825277676')
+//     ->setCalledShowNum('051482043270')
+//     ->setVoiceCode('08559b5f-0573-4e30-89ca-b82a9f4b94f8.wav');
 
-// 短信发送记录查询
+// 短信发送记录查询 passed
 $req = new AlibabaAliqinFcSmsNumQuery;
 $req->setBizId('')
     ->setRecNum('18825277676')
-    ->setQueryDate('20160919')
+    ->setQueryDate('20160920')
     ->setCurrentPage(1)
     ->setPageSize(10);
 
