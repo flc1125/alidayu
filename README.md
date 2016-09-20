@@ -27,7 +27,7 @@
 ## 安装
 
 ```shell
-composer require Flc/Alidayu
+composer require flc/alidayu
 ```
 
 ## 使用
