@@ -1,16 +1,24 @@
-## 功能列表
+# 阿里大于（鱼）API - v2.0
+
+之前的旧版本（`v1.0`）开源出去后，使用者较多；但兼容各大框架较差；为此发布`v2.0`；该版本全新架构，适用任意框架！
+
+> `v2.0`不支持从`v1.0`直接升级，请抛弃`v1.0`
+
+## 功能
 
 - `通过` [短信发送](docs/alibaba_aliqin_fc_sms_num_send.md)
-- `通过` [短信发送记录查询](alibaba_aliqin_fc_sms_num_query.md)
+- `通过` [短信发送记录查询](docs/alibaba_aliqin_fc_sms_num_query.md)
 - `通过` [文本转语音通知](docs/alibaba_aliqin_fc_tts_num_singlecall.md)
 - `通过` [语音通知](docs/alibaba_aliqin_fc_voice_num_singlecall.md)
-- `待测` ~~多方通话~~
-- `待测` ~~流量直充~~
-- `待测` ~~流量直充查询~~
+- `待测` [多方通话](docs/alibaba_aliqin_fc_voice_num_doublecall.md)
+- `待测` [流量直充](docs/alibaba_aliqin_fc_flow_charge.md)
+- `待测` [流量直充查询](docs/alibaba_aliqin_fc_flow_query.md)
+- `待测` [流量直充分省接口](docs/alibaba_aliqin_fc_flow_charge_province.md)
+- `通过` [流量直充档位表](docs/alibaba_aliqin_fc_flow_grade.md)
 
 > **`待测`**：因个人开发者，阿里大于权限相对较低。暂时无法测试；功能已开发，如测试可用，请告知~~
 
-## 环境要求
+## 环境
 
 - PHP >= 5.4
 - [composer](https://getcomposer.org/)
@@ -20,8 +28,6 @@
 ```shell
 composer require Flc/Alidayu
 ```
-
-> 不会的请移步：**三大不留点百度电控么**
 
 ## 使用
 
@@ -40,16 +46,23 @@ $config = [
 $client = new Client(new App($config));
 $req    = new AlibabaAliqinFcSmsNumSend;
 
-$req->setRecNum('13312341234')
+$req->setRecNum('13312311231')
     ->setSmsParam([
-
+        'number' => rand(100000, 999999)
     ])
-    ->setSmsFreeSignName('阿里大于')
-    ->setSmsTemplateCode('11111');
+    ->setSmsFreeSignName('叶子坑')
+    ->setSmsTemplateCode('SMS_15105357');
 
-print_r($client->execute($req));
+$resp = $client->execute($req)
+
+print_r($resp);
+print_r($resp->result->model);
 ?>
 ```
+
+## 帮助
+
+- 意见、BUG反馈： https://github.com/flc1125/alidayu/issues
 
 ## 支持
 
