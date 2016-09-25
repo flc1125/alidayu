@@ -1,5 +1,7 @@
 # 阿里大于(鱼) - v2.0
 
+![build=passing](https://img.shields.io/badge/build-passing-brightgreen.svg?maxAge=2592000) [![composer](https://img.shields.io/badge/composer-flc/alidayu-yellowgreen.svg?maxAge=2592000)](https://packagist.org/packages/flc/alidayu){:target="_blank"} [![tag=v2.0.2](https://img.shields.io/badge/tag-v2.0.2-yellow.svg?maxAge=2592000)](https://github.com/flc1125/alidayu/archive/v2.0.2.zip) ![php>=5.4](https://img.shields.io/badge/php->%3D5.4-orange.svg?maxAge=2592000) [![license=MIT](https://img.shields.io/badge/license-MIT-blue.svg?maxAge=2592000)](https://github.com/flc1125/alidayu/blob/master/LICENSE)
+
 之前的旧版本（`v1.0`）开源出去后，使用者较多；但兼容各大框架较差；为此发布`v2.0`；该版本全新架构，适用任意框架！
 
 > `v2.0`不支持从`v1.0`直接升级，请抛弃`v1.0`
