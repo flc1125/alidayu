@@ -56,7 +56,7 @@ $req->setRecNum('13312311231')
     ->setSmsFreeSignName('叶子坑')
     ->setSmsTemplateCode('SMS_15105357');
 
-$resp = $client->execute($req)
+$resp = $client->execute($req);
 
 print_r($resp);
 print_r($resp->result->model);
