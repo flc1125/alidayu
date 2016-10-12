@@ -22,6 +22,12 @@ class App
     public $app_secret;
 
     /**
+     * 是否沙箱地址
+     * @var boolean
+     */
+    public $sandbox = false;
+
+    /**
      * 初始化
      * @param array $config 阿里大于配置
      */
@@ -32,6 +38,9 @@ class App
 
         if (array_key_exists('app_secret', $config))
             $this->app_secret = $config['app_secret'];
+
+        if (array_key_exists('sandbox', $config))
+            $this->sandbox = $config['sandbox'];
     }
 
     /**
@@ -52,6 +61,17 @@ class App
     public function setAppSecret($value)
     {
         $this->app_secret = $value;
+
+        return $this;
+    }
+
+    /**
+     * 设置是否为沙箱环境
+     * @param boolean $value [description]
+     */
+    public function setSandBox($value = false)
+    {
+        $this->sandbox = $value;
 
         return $this;
     }

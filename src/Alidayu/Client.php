@@ -19,6 +19,12 @@ class Client
     protected $api_uri = 'http://gw.api.taobao.com/router/rest';
 
     /**
+     * 沙箱请求地址
+     * @var string
+     */
+    protected $api_sandbox_uri = 'http://gw.api.tbsandbox.com/router/rest'; 
+
+    /**
      * 应用
      * @var \Flc\Alidayu\App
      */
@@ -73,7 +79,10 @@ class Client
         $params['sign'] = $this->generateSign($params);
 
         // 请求数据
-        $resp = $this->curl($this->api_uri, $params);
+        $resp = $this->curl(
+            $this->app->sandbox ? $this->api_sandbox_uri : $this->api_uri,
+            $params
+        );
 
         // 解析返回
         return $this->parseRep($resp);

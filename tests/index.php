@@ -17,18 +17,19 @@ require __DIR__ . '/../vendor/autoload.php';
 $config = [
     'app_key'    => '*****',
     'app_secret' => '************',
+    'sandbox'    => true,  // 是否为沙箱环境，默认false
 ];
 
 $client = new Client(new App($config));
 
 // 短信发送 passed
-// $req    = new AlibabaAliqinFcSmsNumSend;
-// $req->setRecNum('13312341234')
-//     ->setSmsParam([
-//         'number' => rand(100000, 999999)
-//     ])
-//     ->setSmsFreeSignName('叶子坑')
-//     ->setSmsTemplateCode('SMS_15105357');
+$req = new AlibabaAliqinFcSmsNumSend;
+$req->setRecNum('13312311231')
+    ->setSmsParam([
+        'number' => rand(100000, 999999)
+    ])
+    ->setSmsFreeSignName('叶子坑')
+    ->setSmsTemplateCode('SMS_15105357');
 
 // 文本转语音通知 passed
 // $req = new AlibabaAliqinFcTtsNumSinglecall;
@@ -76,10 +77,10 @@ $client = new Client(new App($config));
 // $req->setOutId('111111');
 
 // 流量直充分省接口 ---
-$req = new AlibabaAliqinFcFlowChargeProvince;
-$req->setPhoneNum('13312311231')
-    ->setGrade('50')
-    ->setOutRechargeId('111111');
+// $req = new AlibabaAliqinFcFlowChargeProvince;
+// $req->setPhoneNum('13312311231')
+//     ->setGrade('50')
+//     ->setOutRechargeId('111111');
 
 print_r($req->getParams());
 
