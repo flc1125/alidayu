@@ -10,8 +10,10 @@ use Flc\Alidayu\Requests\AlibabaAliqinFcVoiceNumDoublecall;
 use Flc\Alidayu\Requests\AlibabaAliqinFcFlowCharge;
 use Flc\Alidayu\Requests\AlibabaAliqinFcFlowQuery;
 use Flc\Alidayu\Requests\AlibabaAliqinFcFlowChargeProvince;
+use Flc\Alidayu\Requests\IRequest;
 
-require __DIR__ . '/../vendor/autoload.php';
+//require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../autoload.php';
 
 // 配置信息
 $config = [
@@ -20,16 +22,29 @@ $config = [
     'sandbox'    => true,  // 是否为沙箱环境，默认false
 ];
 
-$client = new Client(new App($config));
+// $client = new Client(new App($config));
 
-// 短信发送 passed
-$req = new AlibabaAliqinFcSmsNumSend;
-$req->setRecNum('13312311231')
-    ->setSmsParam([
-        'number' => rand(100000, 999999)
-    ])
-    ->setSmsFreeSignName('叶子坑')
-    ->setSmsTemplateCode('SMS_15105357');
+// // 短信发送 passed
+// $req = new AlibabaAliqinFcSmsNumSend;
+// $req->setRecNum('13312311231')
+//     ->setSmsParam([
+//         'number' => rand(100000, 999999)
+//     ])
+//     ->setSmsFreeSignName('叶子坑')
+//     ->setSmsTemplateCode('SMS_15105357');
+
+Client::configure($config);  // 只需定义一次
+
+$rs = Client::request('alibaba.aliqin.fc.sms.num.send', function (IRequest $req) {
+    $req->setRecNum('13312311231')
+        ->setSmsParam([
+            'number' => rand(100000, 999999)
+        ])
+        ->setSmsFreeSignName('叶子坑')
+        ->setSmsTemplateCode('SMS_15105357');
+});
+
+print_r($rs);
 
 // 文本转语音通知 passed
 // $req = new AlibabaAliqinFcTtsNumSinglecall;
@@ -82,6 +97,6 @@ $req->setRecNum('13312311231')
 //     ->setGrade('50')
 //     ->setOutRechargeId('111111');
 
-print_r($req->getParams());
+// print_r($req->getParams());
 
-print_r($client->execute($req));
+// print_r($client->execute($req));
