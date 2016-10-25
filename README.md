@@ -6,9 +6,17 @@
 
 ## 更新
 
+#### v2.0.4 (2016-10-12)
+
+```
+新增自动载入功能（不依靠composer）
+```
+
 #### v2.0.3 (2016-10-12)
 
-- 新增沙箱配置
+```
+新增沙箱配置
+```
 
 ## 功能
 
@@ -34,6 +42,12 @@
 
 ```shell
 composer require flc/alidayu
+```
+
+或
+
+```php
+require '/path/to/alidayu/autoload.php';
 ```
 
 ## 使用
