@@ -1,6 +1,6 @@
 {
     "name": "flc/alidayu",
-    "description": "叶子坑 - 阿里大于API",
+    "description": "阿里大于(鱼)API-SDK；适用任何PHP项目，包括Laravel、Yii、Thinkphp等...",
     "keywords": ["alidayu", "flc"],
     "license": "MIT",
     "require": {
