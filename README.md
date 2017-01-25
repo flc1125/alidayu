@@ -1,10 +1,16 @@
 # 阿里大于(鱼) - v2.0
 
-![build=passing](https://img.shields.io/badge/build-passing-brightgreen.svg?maxAge=2592000) [![composer](https://img.shields.io/badge/composer-flc/alidayu-yellowgreen.svg?maxAge=2592000)](https://packagist.org/packages/flc/alidayu) [![tag=v2.0.4](https://img.shields.io/badge/tag-v2.0.4-yellow.svg?maxAge=2592000)](https://github.com/flc1125/alidayu/archive/v2.0.4.zip) ![php>=5.4](https://img.shields.io/badge/php->%3D5.4-orange.svg?maxAge=2592000) [![license=MIT](https://img.shields.io/badge/license-MIT-blue.svg?maxAge=2592000)](https://github.com/flc1125/alidayu/blob/master/LICENSE)
+![build=passing](https://img.shields.io/badge/build-passing-brightgreen.svg?maxAge=2592000) [![composer](https://img.shields.io/badge/composer-flc/alidayu-yellowgreen.svg?maxAge=2592000)](https://packagist.org/packages/flc/alidayu) [![tag=v2.0.5](https://img.shields.io/badge/tag-v2.0.5-yellow.svg?maxAge=2592000)](https://github.com/flc1125/alidayu/archive/v2.0.5.zip) ![php>=5.4](https://img.shields.io/badge/php->%3D5.4-orange.svg?maxAge=2592000) [![license=MIT](https://img.shields.io/badge/license-MIT-blue.svg?maxAge=2592000)](https://github.com/flc1125/alidayu/blob/master/LICENSE)
 
 > `v2.0`不支持从`v1.0`直接升级，请抛弃`v1.0`
 
 ## 更新
+
+#### v2.0.5 (2017-01-25)
+
+```
+修复#5
+```
 
 #### v2.0.4 (2016-10-25)
 
