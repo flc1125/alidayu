@@ -6,10 +6,11 @@
  * @link http://flc.ren 
  */
 spl_autoload_register(function ($classname) {
-    $baseDir = __DIR__  . '/src/Alidayu/';
+    $baseDir = __DIR__  . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'Alidayu' . DIRECTORY_SEPARATOR;
 
     if (strpos($classname, "Flc\\Alidayu\\") === 0) {
-        $file = $baseDir . substr($classname, strlen('Flc\\Alidayu\\')) . '.php';
+        $path = str_replace('\\', DIRECTORY_SEPARATOR, substr($classname, strlen('Flc\\Alidayu\\')));
+        $file = $baseDir . $path . '.php';
 
         if (is_file($file))
             require_once $file;
