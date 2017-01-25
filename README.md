@@ -8,7 +8,7 @@
 
 #### v2.0.5 (2017-01-25)
 
-- 修复autoload.php [https://github.com/flc1125/alidayu/issues/5](#5)
+- 修复autoload.php #5
 
 #### v2.0.4 (2016-10-25)
 
