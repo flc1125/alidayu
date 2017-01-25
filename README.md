@@ -8,22 +8,16 @@
 
 #### v2.0.5 (2017-01-25)
 
-```
-修复autoload.php [https://github.com/flc1125/alidayu/issues/5](#5)
-```
+- 修复autoload.php [https://github.com/flc1125/alidayu/issues/5](#5)
 
 #### v2.0.4 (2016-10-25)
 
-```
-新增自动载入功能（不依靠composer）
-新增Client::request快捷调用方法
-```
+- 新增自动载入功能（不依靠composer）
+- 新增Client::request快捷调用方法
 
 #### v2.0.3 (2016-10-12)
 
-```
-新增沙箱配置
-```
+- 新增沙箱配置
 
 ## 功能
 
