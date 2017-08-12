@@ -126,7 +126,7 @@ class Client
             $resp = json_decode($response);
 
             if (false !== $resp) {
-                $resp = current($resp);
+                $resp = @current($resp);
             }
         }
 
