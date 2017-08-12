@@ -5,7 +5,7 @@
 ![php>=5.4](https://img.shields.io/badge/php->%3D5.4-orange.svg?maxAge=2592000)
 [![License](https://poser.pugx.org/flc/alidayu/license)](https://packagist.org/packages/flc/alidayu)
 
-> PS：阿里短信 [https://github.com/flc1125/dysms](https://github.com/flc1125/dysms)
+> PS：**阿里短信** [https://github.com/flc1125/dysms](https://github.com/flc1125/dysms)
 
 ## 更新
 
