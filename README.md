@@ -5,7 +5,7 @@
 ![php>=5.4](https://img.shields.io/badge/php->%3D5.4-orange.svg?maxAge=2592000)
 [![License](https://poser.pugx.org/flc/alidayu/license)](https://packagist.org/packages/flc/alidayu)
 
-> `v2.0`不支持从`v1.0`直接升级，请抛弃`v1.0`
+> PS：阿里短信 [https://github.com/flc1125/dysms](https://github.com/flc1125/dysms)
 
 ## 更新
 
