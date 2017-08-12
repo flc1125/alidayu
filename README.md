@@ -11,7 +11,7 @@
 
 #### v2.0.6 (2017-08-12)
 
-- fixed #6
+- fixed [#6](https://github.com/flc1125/alidayu/issues/6)
 
 #### v2.0.5 (2017-01-25)
 
