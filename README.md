@@ -1,10 +1,17 @@
 # 阿里大于(鱼) - v2.0
 
-![build=passing](https://img.shields.io/badge/build-passing-brightgreen.svg?maxAge=2592000) [![composer](https://img.shields.io/badge/composer-flc/alidayu-yellowgreen.svg?maxAge=2592000)](https://packagist.org/packages/flc/alidayu) [![tag=v2.0.5](https://img.shields.io/badge/tag-v2.0.5-yellow.svg?maxAge=2592000)](https://github.com/flc1125/alidayu/archive/v2.0.5.zip) ![php>=5.4](https://img.shields.io/badge/php->%3D5.4-orange.svg?maxAge=2592000) [![license=MIT](https://img.shields.io/badge/license-MIT-blue.svg?maxAge=2592000)](https://github.com/flc1125/alidayu/blob/master/LICENSE)
+[![Latest Stable Version](https://poser.pugx.org/flc/alidayu/v/stable)](https://packagist.org/packages/flc/alidayu)
+[![Total Downloads](https://poser.pugx.org/flc/alidayu/downloads)](https://packagist.org/packages/flc/alidayu)
+![php>=5.4](https://img.shields.io/badge/php->%3D5.4-orange.svg?maxAge=2592000)
+[![License](https://poser.pugx.org/flc/alidayu/license)](https://packagist.org/packages/flc/alidayu)
 
 > `v2.0`不支持从`v1.0`直接升级，请抛弃`v1.0`
 
 ## 更新
+
+#### v2.0.6 (2017-08-12)
+
+- fixed #6
 
 #### v2.0.5 (2017-01-25)
 
